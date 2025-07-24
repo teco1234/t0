@@ -26,4 +26,17 @@ p {
 }
 .f{background-color: rgb(196, 240, 246);}
 
-.a{float: left;}
+.a{
+    float: left;
+    text-decoration: none;
+    padding: 2px 20px;
+    margin: 2px 0;
+    background-color: skyblue;
+    color: black;
+}
+.a:hover {
+    background-color: rgb(0, 255, 255);
+}
+.a:active {
+    background-color: rgb(0, 204, 204);
+}
