@@ -1,0 +1,27 @@
+body {
+    background-color: rgb(224, 247, 247);
+    font-size: 30px;
+    font-family:Helvetica;
+    text-align: center;
+    align-items: center;
+}
+p {
+    margin: -2px 0;
+}
+.b{
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: 4px 2px;
+    font-size: 30px;
+    font-family: tahoma;
+}
+.b:hover {
+    background-color: rgb(201, 1, 1);
+}
+.b:active {
+    background-color: rgb(253, 18, 18);
+}
+.f{background-color: rgb(196, 240, 246);}
