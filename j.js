@@ -13,6 +13,7 @@ function mfr(a){
 function ie(a,b){a.innerHTML=b}
 
 function nn(a){a.style.display="none"}
-function bl(a){a.style.display="block"}
+function bc(a){a.style.display="block"}
+function bl(a){a.style.display="inline"}
 
 function bk(a,c){a.style.backgroundColor=c}
