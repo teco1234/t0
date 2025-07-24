@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body {
+                background-color: rgb(224, 247, 247);
+                font-size: 30px;
+                font-family:Helvetica;
+                text-align: center;
+                align-items: center;
+            }
+            p {
+                margin: -2px 0;
+            }
+            .b{
+                background-color: red;
+                color: white;
+                text-decoration: none;
+                padding: 5px 10px;
+                border-radius: 10px;
+                margin: 2px 2px;
+                font-size: 30px;
+                font-family: tahoma;
+            }
+            .b:hover {
+                background-color: rgb(201, 1, 1);
+            }
+            .b:active {
+                background-color: rgb(253, 18, 18);
+            }
+            .f{background-color: rgb(196, 240, 246);}
+        </style>
+    </head>
+    <body>
+        <p id="p0">Soma</p>
+        <fieldset id="f0" class="f">
+            <p id="p1">-</p>
+            <p id="p2">-</p>
+            <fieldset id="f1"></fieldset>
+        </fieldset>
+
+        <script>
+            s=['Calcule','Digite o resultado','Resposta','|']; 
+            q=[],n=[],r=[],b=[] 
+            let g
+
+            function ini(){
+                q[0]=4
+                q[1]=12
+                g=10
+            }ini()
+
+            function dados(){
+                
+            }
+
+            function rei(){
+                r[0]=''
+                p0.style.color='black';
+                p0.innerHTML=s[0];
+                p2.style.color='black';
+                p2.innerHTML=s[3];
+
+                for(let i=0; i<q[1]; i++){
+                    n[i]=Math.floor(Math.random() * g) + 1;
+                    if(i<q[0]){
+                        if(i<q[0]-1)r[0]+=n[i]+' + '
+                        else r[0]+=n[i]+' = ';
+                    }
+                }
+                p1.innerHTML=r[0];
+            }rei()
+
+            function bt(){
+                for(let i=0; i<10; i++){
+                    b[i]=document.createElement('button');
+                    b[i].innerHTML=i;
+                    b[i].className='b';
+                    
+                    f1.appendChild(b[i]);
+                    b[i].addEventListener('click',()=>{
+                        
+                    });
+                }
+            }bt()
+
+            function mtc(a){
+                for(let i=0; i<a.length; i++){
+                    co(a[i]);
+                }
+            }
+            function co(v){console.log(v)}
+        </script>
+    </body>
+</html>
