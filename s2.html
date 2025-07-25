@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="c.css">
+        <script src="j.js"></script>
+    </head>
+    <body>
+        <p id="p0"></p>
+        <fieldset id="f0" class="f">
+            <p id="p1"></p>
+            <p id="p2"></p>
+            <fieldset id="f1"></fieldset>
+            <p id="p3"></p>
+            <button id="ca" class="b">Carregar</button>
+            <a class="a" href="/index.html">
+                <img src="v.png" alt="Voltar" class="i">  
+            </a>
+        </fieldset>
+
+        <script>
+            n=[],r=[],b=[]
+            let br,q,k
+            
+            function ini(){
+                q=10
+                k=1
+                r[0]=0
+            }ini()
+            function rei(){
+                tln(ca)
+                
+                r[1]=''
+                r[2]=0
+                r[3]=''
+                
+                for(let i=0;i<2;i++){
+                    if(i==0)n[i]=mat(q,k)+r[0]
+                    else n[i]=mat(q,k)
+
+                    if(i==0)r[1]+=n[i]+' \u00A0 + \u00A0 '
+                    else r[1]+=n[i]+' \u00A0 = \u00A0 '
+                    
+                    r[2]+=n[i]
+                }
+                fd(p0,null)
+                fd(p1,null)
+                fd(p2,null)
+                fd(p3,null)
+                ft(p0,o[0])
+                ft(p1,o[0])
+                ft(p2,o[0])
+                ft(p3,o[0])
+                tx(p0,u[2])
+                tx(p1,r[1])
+                tx(p2,u[1])
+                tx(p3,u[0])
+            }rei()
+
+            function botao(){
+                for(let i=0;i<11;i++){
+                    b[i]=criar('button')
+                    b[i].id='b'+i
+                    b[i].classList.add('b')
+                    if(i==10){
+                        br=criar('br')
+                        f1.appendChild(br)
+                        tx(b[i],'L')
+                    }else tx(b[i],i)
+                    b[i].onclick=()=>{ 
+                        if(r[3].length<r[2].toString().length){
+                            if(i==10){
+                                r[3]=''
+                                tx(p2,u[1])
+                            }else{
+                                r[3]+=i
+                                tx(p2,r[3])
+                                if(r[2].toString().length==r[3].length){
+                                    if(r[2]==r[3]){
+                                        fd(p0,o[2])
+                                        ft(p0,o[3])
+                                        tx(p0,u[4])
+                                        q++
+                                        k++
+                                        r[0]=r[2]
+                                    }else{
+                                        fd(p0,o[1])
+                                        ft(p0,o[3])
+                                        tx(p0,u[5])
+                                        q=10
+                                        k=0
+                                        tx(p3,r[1]+r[2])
+                                        r[0]=0
+                                    }
+
+                                    tli(ca)
+                                }
+                            }
+                        }
+                    }
+                    f1.appendChild(b[i])
+                }
+            }botao()
+
+            ca.onclick=()=>{
+                rei()
+            }
+        </script>
+    </body>
+</html>
